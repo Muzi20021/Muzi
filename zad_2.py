@@ -7,11 +7,24 @@ class Library:
         self.phone = phone
 
     def __str__(self):
-        return f"Library: {self.city}, {self.street}, {self.zip_code}, Open hours: {self.open_hours}, Phone: {self.phone}"
+        return (f"Library: "
+                f"{self.city}, {self.street}, {self.zip_code}, "
+                f"Open hours: {self.open_hours},"
+                f" Phone: {self.phone}")
 
 
 class Employee:
-    def __init__(self, first_name, last_name, hire_date, birth_date, city, street, zip_code, phone):
+    def __init__(
+        self,
+        first_name,
+        last_name,
+        hire_date,
+        birth_date,
+        city,
+        street,
+        zip_code,
+        phone,
+    ):
         self.first_name = first_name
         self.last_name = last_name
         self.hire_date = hire_date
@@ -22,11 +35,18 @@ class Employee:
         self.phone = phone
 
     def __str__(self):
-        return f"Employee: {self.first_name} {self.last_name}, Hire date: {self.hire_date}, Birth date: {self.birth_date}, Address: {self.city}, {self.street}, {self.zip_code}, Phone: {self.phone}"
+        return (f"Employee: {self.first_name} {self.last_name}"
+                f", Hire date: {self.hire_date},"
+                f" Birth date: {self.birth_date}, "
+                f"Address: {self.city}, {self.street}, {self.zip_code},"
+                f" Phone: {self.phone}")
 
 
 class Book:
-    def __init__(self, library, publication_date, author_name, author_surname, number_of_pages):
+    def __init__(
+        self, library, publication_date, author_name,
+            author_surname, number_of_pages
+    ):
         self.library = library
         self.publication_date = publication_date
         self.author_name = author_name
@@ -34,7 +54,9 @@ class Book:
         self.number_of_pages = number_of_pages
 
     def __str__(self):
-        return f"Book: {self.author_name} {self.author_surname}, Published: {self.publication_date}, Pages: {self.number_of_pages}, {self.library}"
+        return (f"Book: {self.author_name} {self.author_surname},"
+                f" Published: {self.publication_date},"
+                f" Pages: {self.number_of_pages}, {self.library}")
 
 
 class Order:
@@ -45,16 +67,46 @@ class Order:
         self.order_date = order_date
 
     def __str__(self):
-        return f"Order by {self.employee} for {self.student} on {self.order_date}:\nBooks: {', '.join([str(book) for book in self.books])}"
+        return (f"Order by"
+                f" {self.employee} for {self.student} "
+                f"on {self.order_date}:\nBooks: "
+                f"{', '.join([str(book) for book in self.books])}")
 
 
 # Creating instances
 library1 = Library("City1", "Street1", "12345", "9 AM - 5 PM", "111-222-333")
 library2 = Library("City2", "Street2", "54321", "10 AM - 6 PM", "444-555-666")
 
-employee1 = Employee("John", "Doe", "2020-01-01", "1990-05-15", "City1", "Street1", "12345", "111-222-333")
-employee2 = Employee("Jane", "Smith", "2019-05-01", "1988-11-30", "City2", "Street2", "54321", "444-555-666")
-employee3 = Employee("Bob", "Johnson", "2021-03-15", "1995-08-20", "City1", "Street1", "12345", "777-888-999")
+employee1 = Employee(
+    "John",
+    "Doe",
+    "2020-01-01",
+    "1990-05-15",
+    "City1",
+    "Street1",
+    "12345",
+    "111-222-333",
+)
+employee2 = Employee(
+    "Jane",
+    "Smith",
+    "2019-05-01",
+    "1988-11-30",
+    "City2",
+    "Street2",
+    "54321",
+    "444-555-666",
+)
+employee3 = Employee(
+    "Bob",
+    "Johnson",
+    "2021-03-15",
+    "1995-08-20",
+    "City1",
+    "Street1",
+    "12345",
+    "777-888-999",
+)
 
 book1 = Book(library1, "2022-02-01", "Author1", "Surname1", 200)
 book2 = Book(library1, "2020-05-10", "Author2", "Surname2", 300)
@@ -73,5 +125,3 @@ order2 = Order(employee2, student2, [book4, book5], "2024-03-02")
 print(order1)
 print("\n")
 print(order2)
-
-

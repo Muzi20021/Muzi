@@ -6,7 +6,10 @@ class Property:
         self.address = address
 
     def __str__(self):
-        return f"Property: Area - {self.area} sq. meters, Rooms - {self.rooms}, Price - ${self.price}, Address - {self.address}"
+        return (f"Property: Area - {self.area}"
+                f" sq. meters, Rooms - {self.rooms}, "
+                f"Price - ${self.price}, "
+                f"Address - {self.address}")
 
 
 class House(Property):
@@ -35,5 +38,3 @@ flat1 = Flat(80, 3, 250000, "456 Side St", 2)
 print(house1)
 print("\n")
 print(flat1)
-
-
