@@ -35,3 +35,5 @@ flat1 = Flat(80, 3, 250000, "456 Side St", 2)
 print(house1)
 print("\n")
 print(flat1)
+
+
