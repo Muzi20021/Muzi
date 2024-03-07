@@ -3,7 +3,7 @@ name: PEP 8 Check
 on:
   push:
     branches:
-      - main  # Zmień na nazwę swojej głównej gałęzi
+      - main  
 
 jobs:
   lint:
