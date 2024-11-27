@@ -22,7 +22,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.10
+          python-version: 3.10  # Ustawienie wspieranej wersji Pythona
 
       # Instalacja zależności
       - name: Install dependencies
@@ -49,6 +49,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout kodu
       - name: Checkout repository
         uses: actions/checkout@v3
 
