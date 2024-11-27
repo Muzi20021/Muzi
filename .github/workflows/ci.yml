@@ -22,20 +22,18 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.10  # Ustawienie wspieranej wersji Pythona
+          python-version: 3.12  # Ustawienie wersji Pythona na 3.12
 
-      # Instalacja zależności
+      # Instalacja zależności bez requirements.txt
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
           pip install pytest pytest-cov
 
       # Uruchomienie testów z raportem pokrycia
       - name: Run tests with coverage
         run: |
-          pytest --cov=src tests/
-          pytest --cov-report=xml --cov=src tests/
+          pytest --cov=. tests/
 
       # Upload raportu pokrycia jako artefakt
       - name: Upload coverage report
@@ -52,6 +50,18 @@ jobs:
       # Checkout kodu
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      # Ustawienie Pythona dla lintera
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12
+
+      # Instalacja Pylint
+      - name: Install Pylint
+        run: |
+          python -m pip install --upgrade pip
+          pip install pylint
 
       # Uruchomienie Super-Linter
       - name: Run Super-Linter
